@@ -1,4 +1,4 @@
 #!/bin/bash
 
-gcc -o dice -O0 -ggdb -lm dice.c
+gcc -Wall -o dice -O0 -ggdb dice.c dicefile.c -lm
 
