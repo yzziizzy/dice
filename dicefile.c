@@ -1,185 +1,225 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include "dicefile.h"
-#define NAME_MAX 1000
+#include "dice.h"
 
 
-static int str_trim_eq(const char *a, const char *b);
-static int dicefile_read_expression(FILE *f, const char *read_buf, size_t read_buf_len, char *out_buf, size_t buf_len);
 
-
-// Scans a dicefile for a line with the given name.
-// Fills out_buff with the dice expression.
-// Returns 1 on success, 0 on failure.
-int dicefile_find_line(const char *filename, const char *line_name, char *out_buf, size_t buf_len) {
-    if (strlen(line_name) >= NAME_MAX) {
-        fprintf(stderr, "Provided name is too long (%d is maximum length).\n", NAME_MAX);
-        return 0;
-    }
-    FILE *f = fopen(filename, "rb");
-    if (!f) {
-        fprintf(stderr, "Failed to open dicefile \"%s\".\n", filename);
-        return 0;
-    }
-    // If find_name is true, we're looking for a colon to terminate the name. 
-    // Otherwise, we're looking for a newline to terminate the string.
-    char find_name = 1;
-    
-    // If started_line is false, it means we have yet to find a non-whitespace character.
-    char started_line = 0;
-    
-    #define B_MAX (NAME_MAX * 2)
-    char b[B_MAX];
-    char *start = b;
-    int end = 0;
-    int i = 0;
-    
-    while (1) {
-        int status = fread(b + i, 1, B_MAX - i, f);
-        if (status == 0) {
-            break;
-        }
-        
-        end += status;
-        while (i < end) {
-            if (!started_line) {
-                if (b[i] == '#') {
-                    find_name = 0;
-                }
-                if (!isspace(b[i])) {
-                    started_line = 1;
-                }
-            }
-            if (find_name) {
-                if (b[i] == ':') {
-                    find_name = 0;
-                    b[i] = '\0';
-                    if (str_trim_eq(line_name, start)) {
-                        // We've found the line we're looking for. Read everything in to out_buf.
-                        return dicefile_read_expression(f, b + i, end - i, out_buf, buf_len);
-                    }
-                }
-            }
-            if (b[i] == '\n') {
-                find_name = 1;
-                start = b + i + 1;
-                started_line = 0;
-            }
-            ++i;
-        }
-        
-        if (find_name) {
-            // Move the start of the name back to the start of the buffer
-            end -= (start - b);
-            i -= (start - b);
-            memmove(b, start, end);
-        }
-        else {
-            // Just ignore what's in the buffer
-            end = i = 0;
-        }
-    }
-    
-    fprintf(stderr, "Could not find entry for %s\n", line_name);
-    return 0;
+static char* read_file(char* path, size_t* len) {
+	size_t l;
+	char* buf;
+	FILE* f;
+	
+	f = fopen(path, "rb");
+	
+	if(!f) goto ERROR_0;
+	
+	fseek(f, 0, SEEK_END);
+	l = ftell(f);
+	fseek(f, 0, SEEK_SET);
+	
+	buf = malloc(l+1);
+	
+	if(l != fread(buf, 1, l, f)) {
+		goto ERROR_1;
+	}
+	buf[l] = 0;
+	
+	fclose(f);
+	
+	if(len) *len = l;
+	return buf;
+	
+	
+ERROR_1:
+	free(buf);
+	fclose(f);
+	
+ERROR_0:
+	if(len) *len = -1;
+	
+	fprintf(stderr, "Could not read file: '%s'\n", path);
+	
+	return NULL;
 }
 
-// For internal use by dicefile_find_line
-// read_buf is what's left in the read buffer to copy in to out_buff. Starts on a null char.
-// read_buf_len is the number of valid chars in read_buf
-// out_buf is the output buffer
-// buf_len is the length of the out_buf
-static int dicefile_read_expression(FILE *f, const char *read_buf, size_t read_buf_len, char *out_buf, size_t buf_len) {
-    char *cursor = out_buf;
-    // All the +1 and -1 is because read_buf starts on a null that needs to be skipped.
-    if (read_buf_len > buf_len + 1) {
-        read_buf_len = buf_len + 1;
-    }
-    if (read_buf_len > 0) {
-        memcpy(cursor, read_buf + 1, read_buf_len - 1);
-        cursor += read_buf_len - 1;
-        buf_len -= read_buf_len - 1;
-    }
-    while (buf_len > 0) {
-        int status = fread(cursor, 1, buf_len, f);
-        if (status == 0) {
-            break;
-        }
-        cursor += status;
-        buf_len -= status;
-    }
-    char *end = cursor;
-    cursor = out_buf;
-    while (cursor != end) {
-        if (*cursor == '\n') {
-            *cursor = '\0';
-            return 1;
-        }
-        ++cursor;
-    }
-    if (end - out_buf < buf_len) {
-        *cursor = '\0';
-        return 1;
-    }
-    
-    fprintf(stderr, "Could not fit dice expression inside of output buffer (expression too large)\n");
-    return 0;
+
+preset* preset_list_find(preset_list* pl, char* name) {
+	for(size_t i = 0; i < pl->len; i++) {
+		if(0 == strcmp(pl->data[i]->name, name)) 
+			return pl->data[i]; 
+	}
+	
+	return NULL;
 }
 
-// Returns whether two strings are equal after trimming whitespace off of the end of both strings, and compressing all consecutive whitespace into a single space character
-static int str_trim_eq(const char *a, const char *b) {
-    // Skip leading whitespace for both a and b
-    while (*a && isspace(*a)){
-        ++a;
-    }
-    while (*b && isspace(*b)){
-        ++b;
-    }
-    while (*a && *b) {
-        if (isspace(*a)) {
-            // Skip all whitespace
-            while (*a && isspace(*a)) {
-                ++a;
-            }
-            if (*a) {
-                // We still have more of a to compare
-                
-                // Make sure *b is whitespace
-                if (!*b || !isspace(*b)) {
-                    return 0;
-                }
-                // Skip all the remaining whitespace in b
-                while (*b && isspace(*b)) {
-                    ++b;
-                }
-            } 
-            else {
-                // We've hit the end of a. Make sure we hit the end of b as well with no more characters.
-                while (*b && isspace(*b)) {
-                    ++b;
-                }
-                if (*b) {
-                    // We still have more of b left.
-                    return 0;
-                }
-                return 1;
-            }
-        }
-        else {
-            if (*a != *b) {
-                return 0;
-            }
-            ++a;
-            ++b;
-        }
-    }
-    // Skip any trailing whitespace for both a and b
-    while (*a && isspace(*a)){
-        ++a;
-    }
-    while (*b && isspace(*b)){
-        ++b;
-    }
-    return *a == *b;
+
+int preset_list_set(preset_list* pl, preset* p) {
+	for(size_t i = 0; i < pl->len; i++) {
+		if(0 == strcmp(pl->data[i]->name, p->name)) {
+			pl->data[i] = p;
+			return 1;
+		}
+	}
+	
+	if(pl->len >= pl->alloc) {
+		pl->alloc *= 2;
+		pl->data = realloc(pl->data, pl->alloc * sizeof(*pl->data));
+	}
+	
+	pl->data[pl->len] = p;
+	pl->len++;
+	
+	return 0;
 }
+
+
+preset_list* preset_list_create() {
+	preset_list* pl;
+	
+	pl = calloc(1, sizeof(*pl));
+	pl->alloc = 4;
+	pl->data = calloc(1, pl->alloc * sizeof(*pl->data));
+	
+	return pl;
+}
+
+#define skipspace(s) while(*(s) && isspace(*(s))) { s++; }
+
+
+char* strtrimdupn(char* s, size_t n) {
+	if(n == 0) {
+		char* x = malloc(1);
+		*x = 0;
+		return x;
+	}
+	
+	skipspace(s);
+	
+	char* o = malloc(n + 1);
+	char* e = o;
+	
+	int i = 0;
+	int has_space = 0;
+	while(*s && i < n) {
+		if(isspace(*s)) {
+			if(!has_space) {
+				*e++ = ' ';
+				has_space = 1;
+			}
+			s++;
+		}
+		else {
+			*e++ = *s++;
+			has_space = 0;
+		}
+		
+		i++;
+	}
+	
+	// trim off a trailing space
+	if(*(e-1) == ' ') e--;
+	
+	*e = 0;
+	
+	return o;
+}
+
+
+void skipline(char** s) {
+	while(**s && **s != '\n') (*s)++;
+	if(**s) (*s)++;
+}
+
+
+long dicefile_load_presets(char* path, preset_list* pl) {
+	long added = 0;
+	
+	char* source = read_file(path, NULL);
+	if(!source) return 0;
+	
+	char* s = source;
+	
+	
+	while(*s) {
+		
+		skipspace(s);
+		
+		// skip comments
+		if(*s == '#') {
+			skipline(&s);
+			continue;
+		}
+		
+		
+		// TODO: check for null's in the strchr
+		
+		// read the name
+		char* e = strchr(s, ':');
+		if(!e) continue;
+		char* name = strtrimdupn(s, e - s);
+// 		printf("name: '%s'\n", name);
+		
+		// read the definition
+		e++;
+		char* eol = strchr(e, '\n');
+		char* def = strtrimdupn(e, eol - e);
+// 		printf("exp: '%s'\n", def);
+		
+		s = eol;
+		
+		// parse the roll expression 
+		long reps = 1;
+		combo* head = NULL;
+		combo* tail = NULL;
+		
+		e = def;
+		
+		while(*e) {
+			long r = probe_reps(e, &e);
+			
+			if(r > 0) {
+				reps = r;
+				continue;
+			}
+			else {
+				combo* b = parse_exp(e, &e);
+				if(b) {
+					b->reps = reps;
+					
+					if(head == NULL) head = b;
+					if(tail != NULL) tail->next = b;
+					tail = b;
+				}
+				else {
+					fprintf(stderr, "bad expression in file '%s': %s\n", path, def);
+					break;
+				}
+			}
+		}
+		
+		// add the preset if if's valid
+		if(head) {
+			preset* p = calloc(1, sizeof(*p));
+			p->name = name;
+			p->source = def;
+			p->cmb = head;
+			
+			if(preset_list_set(pl, p)) {
+				fprintf(stderr, "Duplicate preset definition for '%s' found in '%s'\n", name, path);
+			}
+			
+			added++;
+		}
+		else {
+			free(name);
+			free(def);
+		}
+	
+	}
+	
+	return added;
+}
+
+
