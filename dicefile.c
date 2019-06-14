@@ -118,6 +118,10 @@ static int dicefile_read_expression(FILE *f, const char *read_buf, size_t read_b
         }
         ++cursor;
     }
+    if (end - out_buf < buf_len) {
+        *cursor = '\0';
+        return 1;
+    }
     
     fprintf(stderr, "Could not fit dice expression inside of output buffer (expression too large)\n");
     return 0;
