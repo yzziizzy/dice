@@ -345,21 +345,25 @@ int main(int argc, char* argv[]) {
 				printf("\n");
 			}
 			
-			
-			if(p) printf("%s: ", p->name);
-			
-			combo* b = cmb;
-			while(b) {
-				long a = rollcombo(b);
+			for(int r = 0; r < cmb->reps; r++) {
+				if(p) printf("%s: ", p->name);
 				
-				printf("%ld ", a);
+				combo* b = cmb;
+				while(b) {
+					long a = rollcombo(b);
+					
+					printf("%ld ", a);
+					
+					b = b->next;
+				}
 				
-				b = b->next;
+				printf("\n");
 			}
-			
-			printf("\n");
 		}
+		
+		
 		w = w->next;
+		if(w) printf("\n");
 	}
 	
 	
