@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <math.h>
 #include <sys/time.h>
+#include <glob.h>
 
 #include "dice.h"
 
@@ -313,13 +314,39 @@ int main(int argc, char* argv[]) {
 				if(work_t != NULL) work_t->next = w;
 				work_t = w;
 			}
+			else {
+				// add it as a preset. maybe it works.
+				struct work* w = calloc(1, sizeof(*w));
+				
+				w->preset_name = e;
+				w->reps = reps;
+				
+				if(work_h == NULL) work_h = w;
+				if(work_t != NULL) work_t->next = w;
+				work_t = w;
+			}
 			
 		}
 	}
 	
 	
+	// search the local directory for .dice files and try to read them
+	glob_t gl;
+	 
+	gl.gl_offs = 0;
+	glob("*.dice", GLOB_DOOFFS, NULL, &gl);
+	
+	for(int i = 0; i < gl.gl_pathc; i++) {
+		dicefile_load_presets(gl.gl_pathv[i], pl);
+		if(debug) {
+			printf("autoloading dice file: '%s'\n", gl.gl_pathv[i]);
+		}
+	}
+	
+	globfree(&gl);
 	
 	
+	// run all the rolls
 	struct work* w = work_h;
 	
 	while(w) {

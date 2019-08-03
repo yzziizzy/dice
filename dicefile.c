@@ -47,7 +47,7 @@ ERROR_0:
 
 preset* preset_list_find(preset_list* pl, char* name) {
 	for(size_t i = 0; i < pl->len; i++) {
-		if(0 == strcmp(pl->data[i]->name, name)) 
+		if(0 == strcasecmp(pl->data[i]->name, name)) 
 			return pl->data[i]; 
 	}
 	
