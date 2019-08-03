@@ -1,0 +1,453 @@
+# Information in this file is (C) Wizards of the Coast
+# https://company.wizards.com/fancontentpolicy
+
+# Monster Manual, 5e
+
+aarakocra: 3d8
+aboleth: 18d10+36
+deva: 16d8+64
+planetar: 16d10+112
+solar: 18d10+144
+animated armor: 6d8+6
+flying sword: 5d6
+rug of smothering: 6d10
+ankheg: 6d10+6
+azer: 6d8+12
+banshee: 13d8
+basilisk: 8d8+16
+behir: 16d12+64
+beholder: 19d10+76
+death tyrant: 25d10+50
+spectator: 6d8+12
+twig blight: 1d6+1
+needle blight: 2d8+2
+vine blight: 4d8+8
+bugbear: 5d8+5
+bugbear chief: 10d8+20
+bugbear cheif: 10d8+20
+bulette: 9d10+45
+bullywug: 2d8+2
+cambion: 11d8+33
+carrion crawler: 6d10+18
+centaur: 6d10+12
+chimera: 12d10+48
+chuul: 11d10+33
+cloaker: 12d10+12
+cockatrice: 6d6+6
+couatl: 13d8+39
+crawling claw: 1d4
+cyclops: 12d12+60
+darkmantle: 5d6+5
+death knight: 19d8+95
+demilich: 20d4
+balor: 21d12+126
+barlgura: 8d10+24
+chasme: 13d10+13
+dretch: 4d6+4
+glabrezu: 15d10+75
+goristro: 23d12+161
+hezrou: 13d10+65
+manes: 2d6+2
+marilith: 18d10+90
+nalfeshnee: 16d10+96
+quasit: 3d4
+shadow demon: 12d8+12
+vrock: 11d10+44
+yochlol: 16d8+64
+barbed devil: 13d8+52
+bearded devil: 8d8+16
+bone devil: 15d10+60
+chain devil: 10d8+40
+erinyes: 18d8+72
+horned devil: 17d10+55
+ice devil: 19d10+76
+imp: 3d4+3
+lemure: 3d8
+pit fiend: 24d10+168
+spined devil: 5d6+5
+allosaurus: 6d10+18
+ankylosaurus: 8d12+16
+plesiosaurus: 8d10+24
+pteranodon: 3d8
+triceratops: 10d12+30
+tyrannosaurus rex: 13d12+52
+tyrannosaurus: 13d12+52
+displacer beast: 10d10+30
+doppelganger: 8d8+16
+adult blue dracolich: 18d12+108
+blue dracolich: 18d12+108
+dracolich: 18d12+108
+young red shadow dragon: 17d10+85
+red shadow dragon: 17d10+85
+shadow dragon: 17d10+85
+ancient black dragon: 21d20+147
+adult black dragon: 17d12+85
+young black dragon: 15d10+45
+black dragon wyrmling: 6d8+6
+ancient blue dragon: 26d20+208
+adult blue dragon: 18d12+108
+young blue dragon: 16d10+64
+blue dragon wrymling: 8d8+16
+ancient green dragon: 22d20+154
+adult green dragon: 18d12+90
+young green dragon: 16d10+48
+green dragon wyrmling: 7d8+7
+ancient red dragon: 28d20+252
+adult red dragon: 19d12+133
+young red dragon: 17d10+85
+red dragon wyrmling: 10d8+30
+ancient white dragon: 18d20+144
+adult white dragon: 16d12+96
+young white dragon: 14d10+56
+white dragon wyrmling: 5d8+10
+ancient brass dragon: 17d20+119
+adult brass dragon: 15d12+75
+young brass dragon: 13d10+39
+brass dragon wyrmling: 3d8+3
+ancient bronze dragon: 24d20+192
+adult bronze dragon: 17d12+102
+young bronze dragon: 15d10+60
+bronze dragon wyrmling: 5d8+10
+ancient copper dragon: 20d20+140
+adult copper dragon: 16d12+80
+young copper dragon: 14d10+42
+copper dragon wyrmling: 4d8+4
+ancient gold dragon: 28d20+252
+adult gold dragon: 19d12+133
+young gold dragon: 17d10+85
+gold dragon wyrmling: 8d8+24
+ancient silver dragon: 25d20+225
+adult silver dragon: 18d12+126
+young silver dragon: 16d10+80
+silver dragon wyrmling: 6d8+18
+dragon turtle: 22d20+110
+drider: 12d10+52
+dryad: 5d8
+duergar: 4d8+8
+air elemental: 12d10+24
+earth elemental: 12d10+60
+fire elemental: 12d10+36
+water elemental: 12d10+48
+drow: 3d8
+drow elite warrior: 11d8+22
+drow mage: 10d8
+drow priestess of loth: 13d8+13
+empyrean: 19d12+190
+ettercap: 8d8+8
+ettin: 10d10+30
+faerie dragon: 4d4+4
+flameskull: 9d4+18
+flumph: 2d6
+fomorian: 13d12+65
+shrieker: 3d8
+gas spore: 1d10-4
+violet fungus: 4d8
+galeb duhr: 9d8+45
+gargoyle: 7d8+21
+dao: 15d10+105
+djinni: 14d10+84
+efreeti: 16d10+112
+marid: 17d10+136
+ghost: 10d8
+ghast: 8d8
+ghoul: 5d8
+cloud giant: 16d12+96
+fire giant: 13d12+78
+frost giant: 12d12+60
+hill giant: 10d12+40
+stone giant: 11d12+55
+storm giant: 20d12+100
+gibbering mouther: 9d8+27
+githyanki warrior: 9d8+9
+githyanki knight: 14d8+28
+githzerai monk: 7d8+7
+githzerai zerth: 13d8+26
+gnoll: 5d8
+gnoll pack lord: 9d8+9
+gnoll fang of yeenoghu: 10d8+20
+deep gnome: 3d6+6
+svirfneblin: 3d6+6
+goblin: 2d6
+goblin boss: 6d6
+clay golem: 14d10+56
+flesh golem: 11d8+44
+iron golem: 20d10+100
+stone golem: 17d10+85
+gorgon: 12d10+48
+grell: 10d8+10
+grick: 6d8
+grick alpha: 10d10+20
+griffon: 7d10+21
+grimlock: 2d8+2
+green hag: 11d8+33
+night hag: 15d8+45
+sea hag: 7d8+21
+half-red dragon veteran: 10d8+20
+half-dragon: 10d8+20
+harpy: 7d8+7
+hell hound: 7d8+14
+helmed horror: 8d8+24
+hippogriff: 3d10+3
+hobgoblin: 2d8+2
+hobgoblin captain: 6d8+12
+hobgoblin warlord: 13d8+39
+homonculus: 2d4
+hook horror: 10d10+20
+hydra: 15d12+75
+intellect devourer: 6d4+6
+invisible stalker: 16d8+32
+jackalwere: 4d8
+kenku: 3d8
+kobold: 2d6-2
+winged kobold: 3d6-3
+kraken: 27d20+189
+kuo-toa: 4d8
+kuo-toa archpriest: 13d8+39
+kuo-toa whip: 10d8+20
+lamia: 13d10+26
+lich: 18d8+54
+lizardfolk: 4d8+4
+lizardfolk shaman: 5d8+5
+lizard king: 12d8+24
+lizard queen: 12d8+24
+werebear: 18d8+54
+wereboar: 12d8+24
+wererat: 6d8+6
+weretiger: 16d8+48
+werewolf: 9d8+18
+magmin: 2d6+2
+manticore: 8d10+24
+medusa: 17d8+51
+dust mephit: 5d6
+ice mephit: 6d6
+magma mephit: 5d6+5
+mud mephit: 6d6+6
+smoke mephit: 5d6+5
+steam mephit: 6d6
+merfolk: 2d8+2
+merrow: 6d10+12
+mimic: 9d8+18
+mind flayer: 13d8+13
+minotaur: 9d10+27
+monodrone: 1d8+1
+duodrone: 2d8+2
+tridrone: 3d8+3
+quadrone: 4d8+4
+pentadrone: 5d10+5
+mummy: 9d8+18
+mummy lord: 13d8+39
+myconid sprout: 2d6
+quaggoth spore servant: 6d8+18
+myconid sovereign: 8d10+16
+myconid adult: 4d8+4
+bone naga: 9d10+9
+spirit naga: 10d10+20
+guardian naga: 15d10+45
+nightmare: 8d10+24
+nothic: 6d8+18
+ogre: 7d10+21
+half-ogre: 4d10+8
+oni: 13d10+39
+black pudding: 10d10+30
+gelatinous cube: 8d10+40
+gray ooze: 3d8+9
+ochre jelly: 6d10+12
+orc: 2d8+6
+orc war chief: 11d8+44
+orc eye of gruumsh: 6d8+18
+orog: 5d8+20
+otyugh: 12d10+48
+owlbear: 7d10+21
+pegasus: 7d10+21
+peryton: 6d8+6
+piercer: 3d8+9
+pixie: 1d4-1
+pseudodragon: 2d4+2
+purple worm: 15d20+90
+quaggoth: 6d8+18
+rakshasa: 13d8+52
+remorhaz: 17d12+85
+young remorhaz: 11d10+33
+revenant: 16d8+64
+roc: 16d20+80
+roper: 11d10+33
+rust monster: 5d8+5
+sahuagin: 4d8+4
+sahuagin priestess: 6d8+6
+sahuagin baron: 9d10+27
+fire snake: 5d8
+salamander: 12d10+24
+satyr: 7d8
+scarecrow: 8d8
+shadow: 3d8+3
+shambling mound: 16d10+48
+shield guardian: 15d10+60
+skeleton: 2d8+4
+minotaur skeleton: 9d10+18
+warhorse skeleton: 3d10+6
+slaad tadpole: 4d4
+red slaad: 11d10+33
+blue slaad: 13d10+52
+green slaad: 15d10+45
+gray slaad: 17d8+51
+death slaad: 20d8+80
+specter: 5d8
+androsphinx: 19d10+95
+gynosphinx: 16d10+48
+sprite: 1d4
+stirge: 1d4
+succubus: 12d8+12
+incubus: 12d8+12
+tarrasque: 33d20+330
+thri-kreen: 6d8+6
+treant: 12d12+60
+troglodyte: 2d8+4
+troll: 8d10+40
+umber hulk: 11d10+33
+unicorn: 9d10+18
+vampire: 17d8+68
+vampire spawn: 11d8+33
+water weird: 9d10+9
+wight: 6d8+18
+will-o-wisp: 9d4
+wraith: 9d8+27
+wyvern: 13d10+39
+xorn: 7d8+42
+yeti: 6d10+18
+abominable yeti: 11d12+66
+yuan-ti abomination: 15d10+45
+yuan-ti malison: 12d8+12
+yuan-ti pureblood: 9d8
+arcanaloth: 16d8+32
+mezzoloth: 10d8+30
+nycaloth: 13d10+52
+ultraloth: 18d8+72
+zombie: 3d8+9
+beholder zombie: 11d10+33
+ogre zombie: 9d10+36
+
+
+# Misc Creatues in the Monster Manual
+ape: 3d8+6
+awakened shrub: 3d6
+awakened tree: 7d12+14
+axe beak: 3d10+3
+baboon: 1d6
+badger: 1d4+1
+black bear: 3d8+6
+blink dog: 4d8+4
+bat: 1d4+1
+blood hawk: 2d6
+boar: 2d8+2
+brown bear: 4d10+12
+camel: 2d10+4
+cat: 1d4
+crab: 1d4
+crocodile: 3d10+3
+constrictor snake: 2d10+2
+death dog: 6d8+12
+deer: 1d8
+dire wolf: 5d10+10
+draft horse: 3d10+3
+eagle: 1d6
+elephant: 8d12+24
+flying snake: 2d4
+frog: 1d4-1
+elk: 2d10+2
+giant ape: 15d12+60
+giant boar: 5d10+15
+giant badger: 2d8+4
+giant centipede: 1d6+1
+giant bat: 4d10
+giant constrictor snake: 8d12+8
+giant crocodile: 9d12+27
+giant crab: 3d8
+giant eagle: 4d10+4
+giant elk: 5d12+10
+giant frog: 4d8
+giant fire beetle: 1d6+1
+giant goat: 3d10+3
+giant hyena: 6d10+12
+giant octopus: 8d10+8
+giant lizard: 3d10+3
+giant owl: 3d10+3
+giant rat: 2d6
+giant poisonous snake: 2d8+2
+giant scorpion: 7d10+14
+giatn sea horse: 3d10
+giant spider: 4d10+4
+giant shark: 11d12+55
+giant toad: 6d10+6
+giant wasp: 3d8
+giant vulture: 3d10+6
+giant weasel: 2d8
+giant wolf spider: 2d8+2
+hawk: 1d4-1
+goat: 1d8
+hunter shark: 6d10+12
+hyena: 1d8+1
+killer whale: 12d12+12
+jackal: 1d6
+lion: 4d10+4
+lizard: 1d4
+mammoth: 11d12+55
+mastiff: 1d8+1
+mule: 2d8+2
+owl: 1d4-1
+octopus: 1d6
+panther: 3d8
+phase spider: 5d10+5
+poisonous snake: 1d4
+polar bear: 5d10+15
+pony: 2d8+2
+quipper: 1d4-1
+raven: 1d4-1
+rat: 1d4-1
+reef shark: 4d8+4
+riding horse: 2d10+2
+saber-toothed tiger: 7d10+14
+rhinoceros: 6d10+12
+scorpion: 1d4-1
+sea horse: 1d4-1
+swarm of bats: 5d8
+spider: 1d4-1
+swarm of insects: 5d8
+swarm of poisonous snakes: 8d8
+swarm of quippers: 8d8-8
+swarm of rats: 7d8-7
+tiger: 5d10+10
+swarm of ravens: 7d8-7
+vulture: 1d8+1
+warhorse: 3d10+3
+weasel: 1d4-1
+winter wolf: 10d10+20
+wolf: 2d8+2
+worg: 4d10+4
+
+# Monster Manual NPC's
+
+archmage: 18d8+18
+acolyte: 2d8
+assassin: 12d8+24
+bandit: 2d8+2
+bandit captain: 10d8+20
+berserker: 9d8+27
+commoner: 1d8
+cultist: 2d8
+cult fanatic: 6d8+6
+druid: 5d8+5
+gladiator: 15d8+45
+guard: 2d8+2
+knight: 8d8+16
+mage: 9d8
+noble: 2d8
+priest: 5d8+5
+scout: 3d8+3
+spy: 6d8
+thug: 5d8+10
+tribal warrior: 2d8+2
+veteran: 9d8+18
+
+
+
+
