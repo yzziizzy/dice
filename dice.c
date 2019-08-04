@@ -350,11 +350,13 @@ int main(int argc, char* argv[]) {
 	}
 	
 	
-	// search the local directory for .dice files and try to read them
+	// search the local and home directories for .dice files and try to read them
 	glob_t gl;
 	 
 	gl.gl_offs = 0;
-	glob("*.dice", GLOB_DOOFFS, NULL, &gl);
+	glob("./*.dice", GLOB_NOSORT | GLOB_TILDE, NULL, &gl);
+	glob("~/.*.dice", GLOB_NOSORT | GLOB_TILDE | GLOB_APPEND, NULL, &gl);
+	glob("~/.dice/*.dice", GLOB_NOSORT | GLOB_TILDE | GLOB_APPEND, NULL, &gl);
 	
 	for(int i = 0; i < gl.gl_pathc; i++) {
 		dicefile_load_presets(gl.gl_pathv[i], pl);
@@ -371,7 +373,7 @@ int main(int argc, char* argv[]) {
 	
 	while(w) {
 		combo* cmb = NULL;
-		preset* p;
+		preset* p = NULL;
 		
 		if(w->combo) {
 			cmb = w->combo;
@@ -379,7 +381,10 @@ int main(int argc, char* argv[]) {
 		else {
 			if(debug) printf("preset name: '%s'\n", w->preset_name);
 			p = preset_list_find(pl, w->preset_name); 
-			if(p) cmb = p->cmb;
+			if(p) {
+				cmb = p->cmb;
+				cmb->reps = w->reps;
+			}
 			else printf("no such preset: '%s'\n", w->preset_name);
 		}
 		
@@ -393,12 +398,13 @@ int main(int argc, char* argv[]) {
 			}
 			
 			for(int r = 0; r < cmb->reps; r++) {
-				if(p) printf("%s: ", p->pretty_name);
+				if(p && r == 0) printf("%s:\n", p->pretty_name);
 				
 				combo* b = cmb;
 				while(b) {
 					long a = rollcombo(b);
 					
+					if(p) printf("  ");
 					printf("%ld ", a);
 					
 					b = b->next;
