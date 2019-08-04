@@ -25,6 +25,7 @@ combo* parse_exp(char* s, char** end);
 
 typedef struct preset {
 	char* name;
+	char* pretty_name;
 	char* source;
 	combo* cmb;
 } preset;

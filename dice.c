@@ -12,9 +12,29 @@
 
 static int isnum(int c) {
 	return isdigit(c) || c == '-' || c == '+';
- }
+}
 
 
+static char* strip_name(char* s) {
+	int len = strlen(s);
+	char* o, *e;
+	o = e = malloc(len + 1);
+	
+	while(*s) {
+		if(isalpha(*s) || isdigit(*s)) {
+			*e++ = *s;
+		}
+		
+		s++;
+	}
+	
+	*e = 0;
+	
+	return o;
+} 
+
+ 
+ 
 combo* parse_exp(char* s, char** end) {
 	int not_first = 0;
 	long rlen = 4;
@@ -266,7 +286,7 @@ int main(int argc, char* argv[]) {
 			
 			struct work* w = calloc(1, sizeof(*w));
 			
-			w->preset_name = argv[ar];
+			w->preset_name = strip_name(argv[ar]);
 			w->reps = reps;
 			
 			if(work_h == NULL) work_h = w;
@@ -318,7 +338,7 @@ int main(int argc, char* argv[]) {
 				// add it as a preset. maybe it works.
 				struct work* w = calloc(1, sizeof(*w));
 				
-				w->preset_name = e;
+				w->preset_name = strip_name(e);
 				w->reps = reps;
 				
 				if(work_h == NULL) work_h = w;
@@ -373,7 +393,7 @@ int main(int argc, char* argv[]) {
 			}
 			
 			for(int r = 0; r < cmb->reps; r++) {
-				if(p) printf("%s: ", p->name);
+				if(p) printf("%s: ", p->pretty_name);
 				
 				combo* b = cmb;
 				while(b) {

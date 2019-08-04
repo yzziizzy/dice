@@ -132,6 +132,25 @@ void skipline(char** s) {
 	if(**s) (*s)++;
 }
 
+char* strip_name_n(char* s, int maxlen) {
+	int i = 0;
+	char* o, *e;
+	o = e = malloc(maxlen + 1);
+	
+	while(*s && i++ < maxlen) {
+		if(isalpha(*s) || isdigit(*s)) {
+			*e++ = *s;
+		}
+		
+		s++;
+	}
+	
+	*e = 0;
+	
+	return o;
+} 
+
+
 
 long dicefile_load_presets(char* path, preset_list* pl) {
 	long added = 0;
@@ -158,7 +177,8 @@ long dicefile_load_presets(char* path, preset_list* pl) {
 		// read the name
 		char* e = strchr(s, ':');
 		if(!e) continue;
-		char* name = strtrimdupn(s, e - s);
+		char* name = strip_name_n(s, e - s);
+		char* pretty_name = strtrimdupn(s, e - s);
 // 		printf("name: '%s'\n", name);
 		
 		// read the definition
@@ -203,6 +223,7 @@ long dicefile_load_presets(char* path, preset_list* pl) {
 		if(head) {
 			preset* p = calloc(1, sizeof(*p));
 			p->name = name;
+			p->pretty_name = pretty_name;
 			p->source = def;
 			p->cmb = head;
 			
@@ -214,6 +235,7 @@ long dicefile_load_presets(char* path, preset_list* pl) {
 		}
 		else {
 			free(name);
+			free(pretty_name);
 			free(def);
 		}
 	
