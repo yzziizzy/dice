@@ -449,5 +449,282 @@ tribal warrior: 2d8+2
 veteran: 9d8+18
 
 
+# Volo's Guide to Monsters
 
+banderhobb: 8d10+40
+barghest: 12d10+24
+death kiss: 17d10+68
+gauth: 9d8+27
+gazer: 3d4+6
+bodak: 9d8+18
+boggle: 4d6+4
+catoblepas: 8d10+40
+cave fisher: 9d8+18
+chitine: 4d6+4
+choldrith: 12d8+12
+cranium rat: 1d4
+swarm of cranium rats: 8d8
+darkling: 3d6+3
+darkling elder: 5d8+5
+deep scion: 9d8+27
+babau: 11d8+33
+maw demon: 6d8+6
+shoosuva: 13d10+39
+devourer: 17d10+85
+brontosaurus: 9d20+27
+deinonychus: 4d8+8
+dimetrodon: 3d8+6
+hadrosaurus: 3d10+3
+stegosaurus: 8d12+24
+quetzalcoatlus: 4d12+4
+velociraptor: 3d4+3
+draegloth: 13d10+52
+firenewt warrior: 4d8+4
+giant strider: 3d10+6
+firenewt warlock of imix: 6d8+6
+flail snail: 5d10+25
+froghemoth: 16d12+80
+cloud giant smiling one: 21d12+126
+fire giant dreadnought: 15d12+90
+frost giant everlasting one: 14d12+98
+mouth of grolantor: 10d12+40
+stone giant dreamwalker: 14d12+70
+storm giant quintessent: 20d12+100
+girallon: 7d10+21
+flind: 15d8+60
+gnoll flesh gnawer: 4d8+4
+gnoll hunter: 4d8+4
+gnoll witherling: 2d8+2
+grung: 2d6+4
+grung elite warrior: 9d6+18
+grung wildling: 5d6+10
+guard drake: 7d8+21
+annis hag: 10d10+20
+bheur hag: 14d8+28
+hobgoblin devastator: 7d8+14
+hobgoblin iron shadow: 5d8+10
+ki-rin: 16d12+48
+kobold dragonshield: 8d6+16
+kobold inventor: 3d6+3
+kobold scale sorcerer: 5d6+10
+korred: 12d6+60
+leucrotta: 9d10+18
+meenlock: 7d6+7
+alhoon: 16d8+48
+elder brain: 20d10+100
+ulitharid: 17d10+34
+mindwitness: 10d10+20
+morkoth: 20d8+40
+neogi hatchling: 3d4
+neogi: 6d6+12
+neogi master: 13d6+26
+neothelid: 21d20+105
+nilbog: 2d6
+orc blade of ilneval: 8d8+24
+orc claw of luthic: 6d8+18
+orc hand of yurthus: 4d8+12
+orc nurtured one of yurtrus: 4d8+12
+orc red fang of shargaas: 8d8+16
+tanarukk: 10d8+50
+quickling: 3d4+3
+redcap: 6d6+24
+sea spawn: 5d8+10
+shadow mastiff: 6d8+6
+slithering tracker: 5d8+10
+spawn of kyuss: 9d8+36
+tlincalli: 10d10+30
+trapper: 10d10+30
+vargouille: 3d4+6
+vegepygmy: 2d6+2
+vegepygmy chief: 6d6+12
+thorny: 5d8+5
+wood woad: 10d8+30
+xvart: 2d6
+xvart warlock of raxivort: 5d6+5
+yeth hound: 6d10+18
+yuan-ti anathema: 18d12+72
+yuan-ti broodguard: 7d8+14
+yuan-ti mind whisperer: 13d8+13
+yuan-ti nightmare speaker: 13d8+13
+yuan-ti pit master: 16d8+16
+
+# Beasts from Volo's Guide
+
+aurochs: 4d10+16
+cow: 2d10+4
+stench kow: 2d10+4
+ox: 2d10+4
+rothe: 2d8+4
+dolphin: 2d8+2
+swarm of rot grubs: 5d8
+
+# NPC's from Volo's Guide
+
+abjurer: 13d8+26
+apprentice wizard: 2d8
+archdruid: 24d8+24
+archer: 10d8+30
+bard: 8d8+8
+blackguard: 18d8+72
+champion: 22d8+44
+conjurer: 9d8
+diviner: 15d8
+enchanter: 9d8
+evoker: 12d8+12
+illusionist: 7d8+7
+kraken priest: 10d8+30
+martial arts adept: 11d8+11
+master thief: 13d8+26
+necromancer: 12d8+12
+swashbuckler: 12d8+12
+transmuter: 9d8
+war priest: 18d8+36
+warlock of the archfey: 11d8
+warlock of the fiend: 12d8+24
+warlock of the great old one: 14d8+28
+warlord: 27d8+108
+
+
+# Mordenkainen's Tome of Foes
+
+allip: 9d8
+astral dreadnought: 17d20+119
+balhannoth: 12d10+48
+berbaland: 11d8-11
+boneclaw: 17d10+34
+cadaver collector: 18d10+90
+choker: 3d6+3
+bronze scout: 4d8
+iron cobra: 7d8+14
+oaken bolter: 9d8+18
+stone defender: 7d8+21
+corpse flower: 15d10+45
+deathlock: 8d8
+deathlock mastermind: 20d8+20
+deathlock wight: 5d8+15
+alkilith: 15d8+90
+armanite: 8d10+40
+bulezau: 7d8+21
+dybbuk: 5d8+15
+maurezhi: 16d8+16
+molydeus: 16d12+112
+nabassu: 20d8+100
+rutterkin: 5d8+15
+abyssal wretch: 4d8
+sibriex: 12d12+72
+wastrilith: 15d10+75
+baphomet: 19d12+152
+demogorgon: 28d12+224
+fraz-urbluu: 27d10+189
+grazzt: 33d10+165
+juiblex: 28d12+168
+orcus: 30d12+210
+yeenoghu: 23d12+184
+zuggtmoy: 32d10+128
+derro: 3d6+3
+derro savant: 8d6+8
+black abishai: 9d8+18
+blue abishai: 26d8+78
+green abishai: 25d8+75
+red abishai: 30d8+120
+white abishai: 8d8+32
+amnizu: 27d8+81
+hellfire engine: 16d12+112
+merregon: 6d8+18
+narzugon: 15d8+45
+nupperibo: 2d8+2
+orthon: 10d10+50
+bael: 18d10+90
+geryon: 24d12+144
+hutijin: 16d10+112
+moloch: 22d10+132
+titivilus: 17d8+51
+zariel: 40d10+360
+drow arachnomancer: 25d8+50
+drow favored consort: 30d8+90
+drow house captain: 25d8+50
+drow inquisitor: 22d8+44
+drow matron mother: 35d8+105
+drow shadowblade: 20d8+60
+duergar despot: 14d8+56
+duergar hammer: 6d8+6
+duergar kavalrachni: 4d8+8
+duergar mind master: 6d8+12
+duergar screamer: 7d8+7
+duergar soulblade: 4d8
+duergar stone guard: 6d8+12
+duergar warlord: 10d8+30
+duergar xarrorn: 4d8+8
+eidolon: 18d8-18
+sacred statue: 10d10+40
+autumn eladrin: 17d8+51
+spring eladrin: 17d8+51
+summer eladrin: 17d8+51
+winter eladrin: 17d8+51
+leviathan: 16d20+160
+phoenix: 10d20+70
+elder tempest: 16d20+96
+zaratan: 15d20+150
+air elemental myrmidon: 18d8+36
+earth elemental myrmidon: 17d8+51
+fire elemental myrmidon: 19d8+38
+water elemental myrmidon: 17d8+51
+giff: 8d8+24
+githyanki gish: 19d8+38
+githyanki kithrak: 24d8+72
+githyanki supreme commander: 22d8+88
+githzerai anarch: 17d8+68
+githzerai enlightened: 15d8+45
+gray render: 18d10+90
+howler: 12d10+24
+young kruthik: 2d6+2
+adult kruthik: 6d8+12
+kruthik hive lord: 12d10+36
+marut: 32d10+256
+meazel: 10d8-10
+nagpa: 34d8+34
+nightwalker: 22d12+154
+oblex spawn: 4d4+8
+adult oblex: 10d8+30
+elder oblex: 10d12+50
+ogre battering ram: 7d10+21
+ogre bolt launcher: 7d10+21
+ogre chain brute: 7d10+21
+ogre howdah: 7d10+21
+retriever: 20d10+100
+frost salamander: 16d12+64
+gloom weaver: 16d8+32
+shadow dancer: 13d8+13
+sould monger: 19d8+38
+skulk: 4d8
+skull lord: 14d8+42
+the angry: 30d8+120
+the hungry: 30d8+90
+the lonely: 15d8+45
+the lost: 12d8+24
+the wretched: 4d6-4
+star spawn grue: 5d6
+star spawn hulk: 13d10+65
+star spawn larva mage: 16d8+96
+star spawn mangler: 13d8+13
+star spawn seer: 18d8+72
+female steeder: 4d10+8
+male steeder: 2d8+4
+steel predator: 18d10+108
+stone cursed: 3d8+4
+sword wraith commander: 15d8+60
+sword wraith warrior: 6d8+18
+tortle: 4d8+4
+tortle druid: 6d8+6
+dire troll: 15d12+75
+rot troll: 12d10+72
+spirit troll: 15d10+15
+venom troll: 9d10+45
+vampiric mist: 4d8+12
+canoloth: 16d8+48
+dhergoloth: 14d8+56
+hydroloth: 18d8+54
+merrenoloth: 9d8
+oinoloth: 12d10+60
+yagnoloth: 14d10+70
 
