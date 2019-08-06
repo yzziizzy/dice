@@ -296,7 +296,7 @@ int main(int argc, char* argv[]) {
 		else {
 			// bare arg
 			
-			
+			int had_reps = 0;
 			char* e = arg;
 			combo* head = NULL;
 			combo* tail = NULL;
@@ -307,6 +307,7 @@ int main(int argc, char* argv[]) {
 				
 				if(r > 0) {
 					reps = r;
+					had_reps = 1;
 					continue;
 				}
 				else {
@@ -334,11 +335,11 @@ int main(int argc, char* argv[]) {
 				if(work_t != NULL) work_t->next = w;
 				work_t = w;
 			}
-			else {
+			else if(!had_reps){
 				// add it as a preset. maybe it works.
 				struct work* w = calloc(1, sizeof(*w));
 				
-				w->preset_name = strip_name(e);
+				w->preset_name = strip_name(arg);
 				w->reps = reps;
 				
 				if(work_h == NULL) work_h = w;
